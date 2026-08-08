@@ -16,7 +16,7 @@ import { Input } from '@repo/ui/input'
 import { Label } from '@repo/ui/label'
 import { StatusButton } from '@repo/ui/status-button'
 import { useState } from 'react'
-import { Form, useSearchParams } from 'react-router'
+import { Form, Link, useSearchParams } from 'react-router'
 import { HoneypotInputs } from 'remix-utils/honeypot/react'
 import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
@@ -184,6 +184,15 @@ export default function VerifyRoute({ actionData }: Route.ComponentProps) {
 									<Trans>Use a backup code instead</Trans>
 								)}
 							</Button>
+						)}
+
+						{type === 'reset-password' && (
+							<Link
+								to="/forgot-password"
+								className="text-muted-foreground text-sm underline underline-offset-4"
+							>
+								<Trans>Request a new reset code</Trans>
+							</Link>
 						)}
 					</div>
 				</Form>
