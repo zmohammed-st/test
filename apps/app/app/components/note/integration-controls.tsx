@@ -163,20 +163,6 @@ export function IntegrationControls({
 								/>
 							</div>
 						)}
-
-						{/* Empty State */}
-						{!hasAvailableIntegrations && !hasConnections && (
-							<div className="py-4 text-center">
-								<Icon
-									name="link-2"
-									className="text-muted-foreground/50 mx-auto h-8 w-8"
-								/>
-								<p className="text-muted-foreground mt-2 text-sm">
-									No integrations available. Connect your organization to
-									external services first.
-								</p>
-							</div>
-						)}
 					</div>
 				</DialogContent>
 			</Dialog>
