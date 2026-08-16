@@ -58,20 +58,6 @@ export function sanitizeCommentContent(content: string): string {
 }
 
 /**
- * Sanitize plain text content (no HTML allowed)
- * Use this for fields that should never contain HTML
- */
-export function sanitizeTextContent(content: string): string {
-	if (!content || typeof content !== 'string') return ''
-
-	return DOMPurify.sanitize(content, {
-		ALLOWED_TAGS: [], // No HTML tags allowed
-		ALLOWED_ATTR: [],
-		KEEP_CONTENT: true, // Keep text content, remove tags
-	})
-}
-
-/**
  * Sanitize note content (richer formatting allowed)
  */
 export function sanitizeNoteContent(content: string): string {
