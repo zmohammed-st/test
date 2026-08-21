@@ -8,14 +8,8 @@ that are in place and how to use them.
 
 The Epic Stack uses a strict
 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
-This means that only resources from trusted sources are allowed to be loaded.
-However, by default, the CSP is set to `report-only` which means that the
-browser will report violations of the CSP without actually blocking the
-resource.
-
-This is to prevent new users of the Epic Stack from being blocked or surprised
-by the CSP by default. However, it is recommended to enable the CSP in
-`server/index.ts` by removing the `reportOnly: true` option.
+This means that only resources from trusted sources are allowed to be loaded,
+and violations are blocked by the browser.
 
 ## Fly's Internal Network
 
