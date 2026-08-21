@@ -90,26 +90,6 @@ export async function getSSOStrategy(organizationId: string) {
 	return strategyName
 }
 
-/**
- * Refresh an SSO strategy when configuration changes
- */
-export async function refreshSSOStrategy(organizationId: string) {
-	const strategyName = `sso-${organizationId}`
-
-	// Remove existing strategy if it exists
-	try {
-		;(authenticator as any)._strategies.delete(strategyName)
-	} catch {
-		// Strategy might not exist, that's fine
-	}
-
-	// Refresh the strategy in the SSO service
-	await ssoAuthService.refreshStrategy(organizationId)
-
-	// Re-register the strategy
-	return getSSOStrategy(organizationId)
-}
-
 export async function login({
 	username,
 	password,
